@@ -3,13 +3,12 @@ from flask_cors import CORS
 import pyodbc
 import os
 from dotenv import load_dotenv
-from flask_socketio import SocketIO, emit
 
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
-socketio = SocketIO(app, cors_allowed_origins="*")
+
 
 # ================= DB CONNECTION =================
 
@@ -546,8 +545,5 @@ def mark_all_read(student_id):
 
 # ================= MAIN =================
 
-import os
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    socketio.run(app, host="0.0.0.0", port=port)
+    app.run(debug=True)
