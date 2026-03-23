@@ -1,8 +1,7 @@
-flask
-flask-jwt-extended
-flask-sqlalchemy
+Flask
 flask-cors
-werkzeug
-email-validator
+flask-socketio
 pyodbc
 python-dotenv
+gunicorn
+eventlet
